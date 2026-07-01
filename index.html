@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-border: rgba(255, 255, 255, 0.18);
+      --text: #f7fbf8;
+      --muted: #b7c9c1;
+      --accent: #39d98a;
+      --accent-2: #68e1fd;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(57, 217, 138, 0.24), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(104, 225, 253, 0.18), transparent 30%),
+        linear-gradient(135deg, #071113 0%, #102124 46%, #182829 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(92vw, 720px);
+      padding: clamp(2rem, 6vw, 4.5rem);
+      position: relative;
+      isolation: isolate;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      box-shadow: 0 28px 90px var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(120deg, rgba(57, 217, 138, 0.28), rgba(104, 225, 253, 0.18), transparent 65%);
+      opacity: 0.8;
+      padding: 1px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.4rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .badge::before {
+      content: "";
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 22px var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 12vw, 7rem);
+      line-height: 0.92;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), #ffffff);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    p {
+      max-width: 44rem;
+      margin: 1.6rem auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.7;
+    }
+
+    .sparkline {
+      width: min(100%, 420px);
+      height: 5px;
+      margin: 2.25rem auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+      filter: drop-shadow(0 0 16px rgba(104, 225, 253, 0.5));
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding: 2rem 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="badge">Freshly made</div>
+    <h1>Hello <span>World!</span></h1>
+    <p>A tiny page with a little polish: soft glass, bright accents, and a warm welcome from this folder.</p>
+    <div class="sparkline" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
